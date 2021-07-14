@@ -1,0 +1,32 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Zootopia",
+      "director": "Byron Howard, Rich Kie",
+      "cast": "Idris Elba, Ginnifer Goodwin, Jason Bateman",
+      "releaseDate": "2021-6-5"
+    },
+    {
+      "id": 2,
+      "title": "Batman v Superman: Dawn of Justice",
+      "director": "Zack Snyder",
+      "cast": "Ben Affleck, Henry Cavill, Amy Adams",
+      "releaseDate": "2021-6-5"
+    },
+    {
+      "id": 3,
+      "title": "Captain American: Civil War",
+      "director": "Anthony Russo, Joe Russo",
+      "cast": "Scarlett Johansson, Elizabeth Olsen, Chris Evans",
+      "releaseDate": "2021-6-5"
+    },
+    {
+      "id": 4,
+      "title": "X-Men: Apocalypse",
+      "director": "Bryan Singer",
+      "cast": "Jennifer Lawrence, Olivia Munn, Oscar Isaac",
+      "releaseDate": "2021-6-5"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+<p>View Movies</p>
+
+<h1> Top {{itemNum}} Movies </h1>
+
+<ul>
+  <li *ngFor="let movie of movies">
+    {{ movie.title }} - {{movie.director}}
+  </li>
+</ul>
+
+
+<div class='text-center '>
+  <h1>Table</h1>
+</div>
+<div>
+  <input class="col-sm-3" type="text" name="tittle" [(ngModel)]="title">
+  <label class="col-sm-1"> </label>
+  <button class="col-sm-2 btn btn-primary" (click)="searchByTitle()">Tìm kiếm</button>
+</div>
+<div>
+  <label> Từ :</label>
+  <input class="col-sm-3" type="date" name="tittle" [(ngModel)]="title">
+  <label>: đến :</label>
+  <input class="col-sm-3" type="date" name="tittle" [(ngModel)]="title">
+</div>
+<br />
+<table class="table table-striped table-hover">
+
+
+  <div class="container">
+
+
+
+
+    <table class='table table-striped table-hover table-bordered'>
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>
+            <div style="float:left">
+              Title</div>
+            <div style="float:right">
+              <i class="fas fa-sort" style="font-size: 15px;" (click)="sortTitle('title')"></i>
+            </div>
+          </th>
+          <th>
+            <div style="float:left">
+              Director</div>
+            <div style="float:right">
+              <i class="fas fa-sort" style="font-size: 15px;" (click)="sortTitle('director')"></i>
+            </div>
+          </th>
+          <th>
+            <div style="float:left">
+              Cast</div>
+            <div style="float:right">
+              <i class="fas fa-sort" style="font-size: 15px;" (click)="sortTitle('cast')"></i>
+            </div>
+          </th>
+          <th>
+            <div style="float:left">
+              Release Date</div>
+            <div style="float:right">
+              <i class="fas fa-sort" style="font-size: 15px;" (click)="sortTitle('releaseDate')"></i>
+            </div>
+          </th>
+          <th>Active</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movie of movies; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{movie.title}}</td>
+          <td>{{movie.director}}</td>
+          <td>{{movie.cast}}</td>
+          <td>{{movie.releaseDate | date: 'dd/MM/YYYY hh:mm' }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="edit(movie)">Sửa</button>
+            <button class="btn btn-danger" (click)="deleteMovie(movie.id)">Xóa</button>
+          </td>
+        </tr>
+        <tr *ngIf="movies.length == 0">
+          <td colspan="5" style="text-align: center;">Không có dữ liệU</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br />
+    <h1>Chi tiết Movie</h1>
+    <div class="row g-3 align-items-center">
+      <div class="col-sm-2">
+        <label for="inputTitle" class="col-form-label">Title</label>
+      </div>
+      <div class="col-sm-10">
+        <input id="inputTitle" type="text" class="form-control" [(ngModel)]="movieAdd.title">
+      </div>
+    </div>
+
+    <div class="row g-3 align-items-center">
+      <div class="col-sm-2">
+        <label for="inputDirector" class="col-form-label">Director</label>
+      </div>
+      <div class="col-sm-10">
+        <input id="inputDirector" type="text" class="form-control" [(ngModel)]="movieAdd.director">
+      </div>
+    </div>
+    <div class="row g-3 align-items-center">
+      <div class="col-sm-2">
+        <label for="inputCast" class="col-form-label">Cast</label>
+      </div>
+      <div class="col-sm-10">
+        <input id="inputCast" type="text" class="form-control" [(ngModel)]="movieAdd.cast">
+      </div>
+    </div>
+    <div class="row g-3 align-items-center">
+      <div class="col-sm-2">
+        <label for="inputReleaseDate" class="col-form-label">ReleaseDate</label>
+      </div>
+      <div class="col-sm-10">
+        <input id="inputReleaseDate" type="text" name="expectFromDate" [(ngModel)]="movieAdd.releaseDate"
+          onfocus="(this.type='date')" onblur="(this.type = 'text')" class="form-control">
+      </div>
+    </div>
+
+
+
+    <button class="btn btn-primary" (click)="addMovie()">Thêm</button>
+
+    <button class="btn btn-secondary" (click)="updateMovie()">Sửa</button>
+    <br />
+
+  </div>

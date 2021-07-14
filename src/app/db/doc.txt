@@ -1,0 +1,7 @@
+
+Thư mục chứa data cho Json server
+Cách dùng gõ lần lượt 2 dòng lệnh sau vào Terminal
+(Nhớ cài Json Server trước 'npm install -g json-server')
+
+cd src/app/db
+json-server --watch data.json

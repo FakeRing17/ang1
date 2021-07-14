@@ -1,0 +1,15 @@
+<p>Ví dụ về inputChange</p>
+
+<h1>Cout down: {{count}}</h1>
+<h1>Hello : {{name}}</h1>
+<input type="text" name="name" [(ngModel)]="name"><br>
+<input type="text" name="name" (keyup)="inputChange($event)">
+
+<h1>Tính toán</h1>
+<label>Số 1</label>
+<input type="number" name="so1" [(ngModel)]="so1" (change)="solve()">
+<br>
+<label>Số 2</label>
+<input type="number" name="so2" [(ngModel)]="so2" (change)="solve()">
+<br>
+<label>Kết quả: {{kq}}</label>

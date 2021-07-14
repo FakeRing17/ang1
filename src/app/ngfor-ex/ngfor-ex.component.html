@@ -1,0 +1,42 @@
+<p>Ví dụ về ngFor</p>
+
+<h1> Top {{itemNum}} Movies </h1>
+
+<ul>
+  <li *ngFor="let movie of movies">
+    {{ movie.title }} - {{movie.director}}
+  </li>
+</ul>
+
+<br />
+
+<div class='text-center my-5'>
+  <h1>Table</h1>
+</div>
+<div class="container">
+  <table class='table table-striped table-hover table-bordered'>
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Title</th>
+        <th>Director</th>
+        <th>Cast</th>
+        <th>Release Date</th>
+        <th>Active</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movie of movies; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{movie.title}}</td>
+        <td>{{movie.director}}</td>
+        <td>{{movie.cast}}</td>
+        <td>{{movie.releaseDate| date: 'dd/MM/YYYY hh:mm' }}</td>
+        <td><button (click)="deleteMovie(i)">Xóa</button></td>
+      </tr>
+      <tr *ngIf="movies.length == 0">
+        <td colspan="5" style="text-align: center;">Không có dữ liệU</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
